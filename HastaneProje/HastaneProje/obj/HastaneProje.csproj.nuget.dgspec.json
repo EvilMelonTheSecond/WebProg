@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bartu\\Desktop\\Okul Belgeleri\\HastaneProje\\HastaneProje\\HastaneProje.csproj": {}
+    "C:\\Users\\Bartu\\Desktop\\web prog\\WebProg\\HastaneProje\\HastaneProje\\HastaneProje.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bartu\\Desktop\\Okul Belgeleri\\HastaneProje\\HastaneProje\\HastaneProje.csproj": {
+    "C:\\Users\\Bartu\\Desktop\\web prog\\WebProg\\HastaneProje\\HastaneProje\\HastaneProje.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bartu\\Desktop\\Okul Belgeleri\\HastaneProje\\HastaneProje\\HastaneProje.csproj",
+        "projectUniqueName": "C:\\Users\\Bartu\\Desktop\\web prog\\WebProg\\HastaneProje\\HastaneProje\\HastaneProje.csproj",
         "projectName": "HastaneProje",
-        "projectPath": "C:\\Users\\Bartu\\Desktop\\Okul Belgeleri\\HastaneProje\\HastaneProje\\HastaneProje.csproj",
+        "projectPath": "C:\\Users\\Bartu\\Desktop\\web prog\\WebProg\\HastaneProje\\HastaneProje\\HastaneProje.csproj",
         "packagesPath": "C:\\Users\\Bartu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bartu\\Desktop\\Okul Belgeleri\\HastaneProje\\HastaneProje\\obj\\",
+        "outputPath": "C:\\Users\\Bartu\\Desktop\\web prog\\WebProg\\HastaneProje\\HastaneProje\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bartu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -57,6 +61,10 @@
               "version": "[8.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[8.0.0, )"
             }
