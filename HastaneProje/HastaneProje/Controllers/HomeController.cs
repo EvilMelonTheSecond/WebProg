@@ -1,6 +1,13 @@
 using HastaneProje.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace HastaneProje.Controllers
 {
@@ -18,6 +25,28 @@ namespace HastaneProje.Controllers
             return View();
         }
 
+
+        public IActionResult Cookie()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Cookie(string culture)
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.Now.AddDays(10) }
+            );
+
+            return RedirectToAction("Cookie");
+        }
+
+        public IActionResult Browser()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
