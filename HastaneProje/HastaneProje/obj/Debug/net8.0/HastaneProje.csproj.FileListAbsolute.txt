@@ -257,3 +257,10 @@ C:\Users\Bartu\Desktop\web prog\WebProg\HastaneProje\HastaneProje\obj\Debug\net8
 C:\Users\Bartu\Desktop\web prog\WebProg\HastaneProje\HastaneProje\obj\Debug\net8.0\ref\HastaneProje.dll
 C:\Users\Bartu\Desktop\web prog\WebProg\HastaneProje\HastaneProje\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.dll
 C:\Users\Bartu\Desktop\web prog\WebProg\HastaneProje\HastaneProje\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll
+C:\Users\Bartu\Desktop\web prog\WebProg\HastaneProje\HastaneProje\obj\Debug\net8.0\HastaneProje.csproj.GenerateResource.cache
+C:\Users\Bartu\Desktop\web prog\WebProg\HastaneProje\HastaneProje\bin\Debug\net8.0\tr\HastaneProje.resources.dll
+C:\Users\Bartu\Desktop\web prog\WebProg\HastaneProje\HastaneProje\obj\Debug\net8.0\HastaneProje.Views.Home.Index.tr.resources
+C:\Users\Bartu\Desktop\web prog\WebProg\HastaneProje\HastaneProje\obj\Debug\net8.0\tr\HastaneProje.resources.dll
+C:\Users\Bartu\Desktop\web prog\WebProg\HastaneProje\HastaneProje\bin\Debug\net8.0\fr\HastaneProje.resources.dll
+C:\Users\Bartu\Desktop\web prog\WebProg\HastaneProje\HastaneProje\obj\Debug\net8.0\HastaneProje.Views.Home.Index.fr.resources
+C:\Users\Bartu\Desktop\web prog\WebProg\HastaneProje\HastaneProje\obj\Debug\net8.0\fr\HastaneProje.resources.dll
