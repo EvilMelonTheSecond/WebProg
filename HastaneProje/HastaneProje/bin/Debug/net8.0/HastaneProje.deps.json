@@ -18,6 +18,14 @@
         },
         "runtime": {
           "HastaneProje.dll": {}
+        },
+        "resources": {
+          "fr/HastaneProje.resources.dll": {
+            "locale": "fr"
+          },
+          "tr/HastaneProje.resources.dll": {
+            "locale": "tr"
+          }
         }
       },
       "Azure.Core/1.25.0": {

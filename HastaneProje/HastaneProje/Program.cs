@@ -1,4 +1,5 @@
 using HastaneProje.Data;
+using HastaneProje.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication;
@@ -23,12 +24,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<HastaneDbContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<HastaneUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<HastaneDbContext>();
+builder.Services.AddIdentity<Account, IdentityRole>()
+     .AddDefaultTokenProviders()
+     .AddDefaultUI()
+     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat
                  .Suffix).AddDataAnnotationsLocalization();
