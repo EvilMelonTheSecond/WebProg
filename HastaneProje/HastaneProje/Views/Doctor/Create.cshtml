@@ -1,0 +1,33 @@
+﻿@model DoctorViewModel
+
+<h2>Create Doctor</h2>
+
+<form asp-controller="Doctor" asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Name">Doctor Name:</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Specialization">Specialization:</label>
+        <input asp-for="Specialization" class="form-control" />
+        <span asp-validation-for="Specialization" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MainBranchId">Main Branch ID:</label>
+        <input asp-for="MainBranchId" class="form-control" />
+        <span asp-validation-for="MainBranchId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PolyclinicBranchId">Polyclinic Branch ID:</label>
+        <input asp-for="PolyclinicBranchId" class="form-control" />
+        <span asp-validation-for="PolyclinicBranchId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<a asp-controller="Home" asp-action="Index">Back to Home</a>

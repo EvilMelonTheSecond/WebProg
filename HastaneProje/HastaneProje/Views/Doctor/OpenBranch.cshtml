@@ -1,0 +1,15 @@
+﻿@model BranchViewModel
+
+<h2>Add a new branch</h2>
+
+<form asp-controller="Doctor" asp-action="OpenBranch" method="post">
+    <div class="form-group">
+        <label asp-for="Name">Branch Name:</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<a asp-controller="Home" asp-action="Index">Back to Home</a>

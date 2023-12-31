@@ -9,5 +9,7 @@ namespace HastaneProje.Areas.Identity.Data;
 // Add profile data for application users by adding properties to the HastaneUser class
 public class HastaneUser : IdentityUser
 {
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
 }
 

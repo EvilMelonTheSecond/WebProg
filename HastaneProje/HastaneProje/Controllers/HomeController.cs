@@ -1,44 +1,65 @@
-using HastaneProje.Models;
-using System;
-using System.Data;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Localization;
+﻿using HastaneProje.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Localization;
+using System.Diagnostics;
+using System.Globalization;
+using Microsoft.AspNetCore.WebUtilities;
 
 namespace HastaneProje.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IStringLocalizer<HomeController> _localizer;
         private readonly ILogger<HomeController> _logger;
-        private readonly UserManager<Account> _userManager;
-
-        public HomeController(IStringLocalizer<HomeController> localizer, ILogger<HomeController> logger, UserManager<Account> userManager)
+        private readonly IStringLocalizer<HomeController> _localizer;
+        public HomeController(ILogger<HomeController> logger, IStringLocalizer<HomeController> localizer)
         {
-            _localizer = localizer;
             _logger = logger;
-            _userManager = userManager;
+            _localizer = localizer;
         }
-        [HttpGet]
+
         public IActionResult Index()
         {
             return View();
         }
-        [HttpPost]
-        public async Task<IActionResult> Index(Account acc)
-        {
-            if (ModelState.IsValid)
-                ViewBag.Message = _localizer["Kabul"];
+        [Authorize]
 
+        public IActionResult Privacy()
+        {
             return View();
+        }
+        public IActionResult SetLanguage(string culture, string returnUrl)
+        {
+            var supportedCultures = new[] { "en", "tr", "fr"};
+
+            // Ensure the requested culture is supported
+            if (supportedCultures.Contains(culture))
+            {
+                var cookieOptions = new CookieOptions
+                {
+                    Expires = DateTimeOffset.UtcNow.AddYears(1),
+                    IsEssential = true,
+                    SameSite = SameSiteMode.Strict
+                };
+
+                // Set culture in the response cookie
+                Response.Cookies.Append(
+                    CookieRequestCultureProvider.DefaultCookieName,
+                    CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                    cookieOptions
+                );
+
+                // Set the culture for the current thread
+                System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo(culture);
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
+            }
+
+            Console.WriteLine($"Selected culture: {culture}, returnUrl: {returnUrl}");
+
+            // Redirect to the original URL
+            return LocalRedirect(returnUrl);
         }
     }
 }

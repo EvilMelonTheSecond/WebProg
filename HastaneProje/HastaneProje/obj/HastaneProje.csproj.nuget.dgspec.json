@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bartu\\Desktop\\web prog\\WebProg\\HastaneProje\\HastaneProje\\HastaneProje.csproj": {}
+    "C:\\Users\\Bartu\\Desktop\\Okul Belgeleri\\Active\\HastaneProje\\HastaneProje\\HastaneProje.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bartu\\Desktop\\web prog\\WebProg\\HastaneProje\\HastaneProje\\HastaneProje.csproj": {
+    "C:\\Users\\Bartu\\Desktop\\Okul Belgeleri\\Active\\HastaneProje\\HastaneProje\\HastaneProje.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bartu\\Desktop\\web prog\\WebProg\\HastaneProje\\HastaneProje\\HastaneProje.csproj",
+        "projectUniqueName": "C:\\Users\\Bartu\\Desktop\\Okul Belgeleri\\Active\\HastaneProje\\HastaneProje\\HastaneProje.csproj",
         "projectName": "HastaneProje",
-        "projectPath": "C:\\Users\\Bartu\\Desktop\\web prog\\WebProg\\HastaneProje\\HastaneProje\\HastaneProje.csproj",
+        "projectPath": "C:\\Users\\Bartu\\Desktop\\Okul Belgeleri\\Active\\HastaneProje\\HastaneProje\\HastaneProje.csproj",
         "packagesPath": "C:\\Users\\Bartu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bartu\\Desktop\\web prog\\WebProg\\HastaneProje\\HastaneProje\\obj\\",
+        "outputPath": "C:\\Users\\Bartu\\Desktop\\Okul Belgeleri\\Active\\HastaneProje\\HastaneProje\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bartu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -37,36 +37,30 @@
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[6.0.23, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[6.0.23, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[6.0.23, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[6.0.23, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[6.0.16, )"
             }
           },
           "imports": [
@@ -88,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

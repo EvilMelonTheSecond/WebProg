@@ -6,70 +6,32 @@
 @inject IViewLocalizer Localizer
 @inject IOptions<RequestLocalizationOptions> LocOptions
 
+
+
 @{
-    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
-    var cultureItems = LocOptions.Value.SupportedUICultures
-        .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
-        .ToList();
+    var supportedCultures = new[] { "en", "tr", "fr"}; // Add other supported languages
 }
-
-<label>Language:</label>
-<select onchange="SetCulture(this.value)" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems">
-</select>
-
-@model Account
-
-
-<div asp-validation-summary="All" class="text-danger"></div>
-@{
-    string culture = "", uiculture = "";
-    if (Context.Request.QueryString.HasValue)
-    {
-        string url = Context.Request.QueryString.Value;
-        culture = Context.Request.Query["culture"];
-        uiculture = Context.Request.Query["ui-culture"];
-    }
-}
-
-
-<h4>Account</h4>
-<hr />
-<h2>@Localizer["Tester"]</h2>
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Index" asp-route-culture="@culture" asp-route-ui-culture="@uiculture" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <label for="languageDropdown">Select Language:</label>
+    <select id="languageDropdown" onchange="changeLanguage(this.value)">
+        @foreach (var culture in supportedCultures)
+        {
+            <option value="@Url.Action("SetLanguage", "Home", new { culture, returnUrl = Context.Request.Path })">@culture</option>
+        }
+    </select>
 </div>
+
+<div class="text-center">
+    <h1 class="display-4">@Localizer["Greeting"]</h1>
+    <p>@Localizer["WelcomeMessage"]</p>
+</div>
+
 <script>
-    function SetCulture(selectedValue) {
-        alert(selectedValue);
-        var url = window.location.href.split('?')[0];
-        var culture = "?culture=" + selectedValue + "&ui-culture=" + selectedValue;
-        window.location.href = url + culture;
+    function changeLanguage(selectedCulture) {
+        var returnUrl = window.location.origin + window.location.pathname;
+        window.location.href = returnUrl + '?culture=' + selectedCulture;
     }
 </script>
+
 

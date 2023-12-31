@@ -1,0 +1,36 @@
+﻿@model AvailableAppointmentsViewModel
+
+<h2>Available Appointments for @Model.Doctor.Name</h2>
+
+@if (Model.AvailableAppointments != null && Model.AvailableAppointments.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date and Time</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var appointmentDateTime in Model.AvailableAppointments)
+            {
+                <tr>
+                    <td>@appointmentDateTime.ToString("yyyy-MM-dd HH:mm")</td>
+                    <td>
+                        <form asp-controller="Appointment" asp-action="ScheduleAppointment" method="post">
+                            <input type="hidden" name="doctorId" value="@Model.Doctor.Id" />
+                            <input type="hidden" name="appointmentDateTime" value="@appointmentDateTime.ToString("yyyy-MM-ddTHH:mm")" />
+                            <button type="submit" class="btn btn-primary">Schedule</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No available appointments for @Model.Doctor.Name in the next week.</p>
+}
+
+<a asp-controller="Home" asp-action="Index">Back to Home</a>
